@@ -14,7 +14,6 @@ A quick description of your strapi application
 
 ## Heroku 
 - admin url : https://catalog-strapi-api.herokuapp.com/admin
-- user & pass : husen@softwareseni.com , Admin123!
 - document page : https://catalog-strapi-api.herokuapp.com/documentation/v1.0.0
 
 

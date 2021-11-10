@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/categories": {
+    "/forms": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Category"
+                    "$ref": "#/components/schemas/Form"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Category"
+          "Form"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Category"
+                  "$ref": "#/components/schemas/Form"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Category"
+          "Form"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCategory"
+                "$ref": "#/components/schemas/NewForm"
               }
             }
           }
         }
       }
     },
-    "/categories/count": {
+    "/forms/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Category"
+          "Form"
         ],
         "parameters": []
       }
     },
-    "/categories/{slug}": {
+    "/forms/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Category"
+                  "$ref": "#/components/schemas/Form"
                 }
               }
             }
@@ -359,11 +359,11 @@
         },
         "summary": "",
         "tags": [
-          "Category"
+          "Form"
         ],
         "parameters": [
           {
-            "name": "slug",
+            "name": "id",
             "in": "path",
             "description": "",
             "deprecated": false,
@@ -373,9 +373,7 @@
             }
           }
         ]
-      }
-    },
-    "/categories/{id}": {
+      },
       "put": {
         "deprecated": false,
         "description": "Update a record",
@@ -385,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Category"
+                  "$ref": "#/components/schemas/Form"
                 }
               }
             }
@@ -423,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Category"
+          "Form"
         ],
         "requestBody": {
           "description": "",
@@ -431,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCategory"
+                "$ref": "#/components/schemas/NewForm"
               }
             }
           }
@@ -497,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Category"
+          "Form"
         ],
         "parameters": [
           {
@@ -516,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Category": {
+      "Form": {
         "required": [
           "id"
         ],
@@ -524,118 +522,66 @@
           "id": {
             "type": "string"
           },
-          "name": {
+          "Title": {
             "type": "string"
           },
-          "slug": {
-            "type": "uid"
+          "Content": {
+            "type": "object"
           },
-          "products": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "title",
-                "description",
-                "image",
-                "status"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "price": {
-                  "type": "number"
-                },
-                "image": {
-                  "type": "string"
-                },
-                "slug": {
-                  "type": "uid"
-                },
-                "categories": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "Custom_field": {
-                  "type": "component"
-                },
-                "status": {
-                  "type": "string",
-                  "enum": [
-                    "draft",
-                    "published"
-                  ]
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
+          "category": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "slug": {
+                "type": "uid"
+              },
+              "products": {
+                "type": "array",
+                "items": {
                   "type": "string"
                 }
+              },
+              "forms": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
               }
             }
           },
-          "forms": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "Title": {
-                  "type": "string"
-                },
-                "Content": {
-                  "type": "object"
-                },
-                "category": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
           }
         }
       },
-      "NewCategory": {
+      "NewForm": {
         "properties": {
-          "name": {
+          "Title": {
             "type": "string"
           },
-          "slug": {
-            "type": "uid"
+          "Content": {
+            "type": "object"
           },
-          "products": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "category": {
+            "type": "string"
           },
-          "forms": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
           },
           "created_by": {
             "type": "string"
@@ -649,7 +595,7 @@
   },
   "tags": [
     {
-      "name": "Category"
+      "name": "Form"
     }
   ]
 }

@@ -573,8 +573,7 @@
     "schemas": {
       "Form": {
         "required": [
-          "id",
-          "Email"
+          "id"
         ],
         "properties": {
           "id": {
@@ -620,9 +619,6 @@
               }
             }
           },
-          "Email": {
-            "type": "string"
-          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -630,9 +626,6 @@
         }
       },
       "NewForm": {
-        "required": [
-          "Email"
-        ],
         "properties": {
           "Title": {
             "type": "string"
@@ -641,9 +634,6 @@
             "type": "object"
           },
           "category": {
-            "type": "string"
-          },
-          "Email": {
             "type": "string"
           },
           "published_at": {

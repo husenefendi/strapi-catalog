@@ -588,8 +588,7 @@
             "type": "array",
             "items": {
               "required": [
-                "id",
-                "Email"
+                "id"
               ],
               "properties": {
                 "id": {
@@ -602,9 +601,6 @@
                   "type": "object"
                 },
                 "category": {
-                  "type": "string"
-                },
-                "Email": {
                   "type": "string"
                 },
                 "published_at": {

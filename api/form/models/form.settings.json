@@ -21,11 +21,6 @@
     "category": {
       "via": "forms",
       "model": "category"
-    },
-    "Email": {
-      "type": "email",
-      "required": true,
-      "unique": true
     }
   }
 }

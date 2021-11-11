@@ -585,7 +585,7 @@
           "Content": {
             "type": "object"
           },
-          "category": {
+          "form_wizard": {
             "required": [
               "id"
             ],
@@ -593,23 +593,17 @@
               "id": {
                 "type": "string"
               },
-              "name": {
+              "Label": {
                 "type": "string"
-              },
-              "slug": {
-                "type": "uid"
-              },
-              "products": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
               },
               "forms": {
                 "type": "array",
                 "items": {
                   "type": "string"
                 }
+              },
+              "published_at": {
+                "type": "string"
               },
               "created_by": {
                 "type": "string"
@@ -633,7 +627,7 @@
           "Content": {
             "type": "object"
           },
-          "category": {
+          "form_wizard": {
             "type": "string"
           },
           "published_at": {

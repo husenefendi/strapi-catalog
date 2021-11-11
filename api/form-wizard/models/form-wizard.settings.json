@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "forms",
+  "collectionName": "form_wizards",
   "info": {
-    "name": "Form",
+    "name": "Form Wizard",
     "description": ""
   },
   "options": {
@@ -12,15 +12,12 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Title": {
+    "Label": {
       "type": "string"
     },
-    "Content": {
-      "type": "json"
-    },
-    "form_wizard": {
-      "via": "forms",
-      "model": "form-wizard"
+    "forms": {
+      "collection": "form",
+      "via": "form_wizard"
     }
   }
 }

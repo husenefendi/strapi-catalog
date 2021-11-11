@@ -22,10 +22,6 @@
       "via": "categories",
       "collection": "product",
       "dominant": true
-    },
-    "forms": {
-      "via": "category",
-      "collection": "form"
     }
   }
 }

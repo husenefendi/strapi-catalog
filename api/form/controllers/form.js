@@ -5,4 +5,9 @@
  * to customize this controller
  */
 
-module.exports = {};
+module.exports = {
+    contentType: async (ctx) => {
+        console.log({ ctx });
+        return { id: 'tes' }
+    }
+};

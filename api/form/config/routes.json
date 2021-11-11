@@ -10,6 +10,14 @@
     },
     {
       "method": "GET",
+      "path": "/content-type-forms",
+      "handler": "form.contentType",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
       "path": "/forms/count",
       "handler": "form.count",
       "config": {

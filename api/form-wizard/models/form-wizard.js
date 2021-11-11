@@ -5,4 +5,22 @@
  * to customize this model
  */
 
-module.exports = {};
+module.exports = {
+    lifecycles: {
+        afterFind: async (results, params, populate) => {
+            return results.map(e => {
+                e.formString = JSON.stringify(e.forms)
+                return e
+            })
+        },
+        afterFindOne: async (results, params, populate) => {
+            // const newResult = { ...results, formString: JSON.stringify(results.forms) }
+            results.formString = JSON.stringify(results.forms)
+            return results
+            // return results.map(e => {
+            //     e.formString = JSON.stringify(e)
+            //     return e
+            // })
+        },
+    }
+};

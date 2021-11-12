@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "registers",
+  "info": {
+    "name": "Register"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fullName": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true,
+      "unique": true
+    },
+    "password": {
+      "type": "password",
+      "required": true
+    },
+    "birthday": {
+      "type": "date",
+      "required": true
+    }
+  }
+}

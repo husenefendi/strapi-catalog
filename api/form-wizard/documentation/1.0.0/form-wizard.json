@@ -542,7 +542,8 @@
             "type": "array",
             "items": {
               "required": [
-                "id"
+                "id",
+                "Title"
               ],
               "properties": {
                 "id": {

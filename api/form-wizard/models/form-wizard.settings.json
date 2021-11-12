@@ -16,8 +16,8 @@
       "type": "string"
     },
     "forms": {
-      "collection": "form",
-      "via": "form_wizard"
+      "via": "form_wizard",
+      "collection": "form"
     }
   }
 }

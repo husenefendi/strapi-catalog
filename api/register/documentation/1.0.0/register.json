@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/forms": {
+    "/registers": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Form"
+                    "$ref": "#/components/schemas/Register"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Form"
+          "Register"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Form"
+                  "$ref": "#/components/schemas/Register"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Form"
+          "Register"
         ],
         "requestBody": {
           "description": "",
@@ -247,71 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewForm"
+                "$ref": "#/components/schemas/NewRegister"
               }
             }
           }
         }
       }
     },
-    "/content-type-forms": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Form"
-        ],
-        "parameters": []
-      }
-    },
-    "/forms/count": {
+    "/registers/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -363,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Form"
+          "Register"
         ],
         "parameters": []
       }
     },
-    "/forms/{id}": {
+    "/registers/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -378,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Form"
+                  "$ref": "#/components/schemas/Register"
                 }
               }
             }
@@ -416,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Form"
+          "Register"
         ],
         "parameters": [
           {
@@ -440,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Form"
+                  "$ref": "#/components/schemas/Register"
                 }
               }
             }
@@ -478,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Form"
+          "Register"
         ],
         "requestBody": {
           "description": "",
@@ -486,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewForm"
+                "$ref": "#/components/schemas/NewRegister"
               }
             }
           }
@@ -552,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Form"
+          "Register"
         ],
         "parameters": [
           {
@@ -571,48 +514,31 @@
   },
   "components": {
     "schemas": {
-      "Form": {
+      "Register": {
         "required": [
           "id",
-          "Title"
+          "fullName",
+          "email",
+          "password",
+          "birthday"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "Title": {
+          "fullName": {
             "type": "string"
           },
-          "Content": {
-            "type": "object"
+          "email": {
+            "type": "string"
           },
-          "form_wizard": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "Label": {
-                "type": "string"
-              },
-              "forms": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
+          "password": {
+            "type": "string",
+            "format": "password"
+          },
+          "birthday": {
+            "type": "string",
+            "format": "date"
           },
           "published_at": {
             "type": "string",
@@ -620,19 +546,27 @@
           }
         }
       },
-      "NewForm": {
+      "NewRegister": {
         "required": [
-          "Title"
+          "fullName",
+          "email",
+          "password",
+          "birthday"
         ],
         "properties": {
-          "Title": {
+          "fullName": {
             "type": "string"
           },
-          "Content": {
-            "type": "object"
-          },
-          "form_wizard": {
+          "email": {
             "type": "string"
+          },
+          "password": {
+            "type": "string",
+            "format": "password"
+          },
+          "birthday": {
+            "type": "string",
+            "format": "date"
           },
           "published_at": {
             "type": "string",
@@ -650,7 +584,7 @@
   },
   "tags": [
     {
-      "name": "Form"
+      "name": "Register"
     }
   ]
 }

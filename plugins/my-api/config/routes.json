@@ -1,0 +1,20 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/",
+      "handler": "my-api.index",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/detail/:id",
+      "handler": "my-api.detail",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -10,7 +10,7 @@
     },
     {
       "method": "GET",
-      "path": "/detail/:id",
+      "path": "/:id",
       "handler": "my-api.detail",
       "config": {
         "policies": []

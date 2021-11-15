@@ -5,4 +5,10 @@
  * to customize this controller
  */
 
-module.exports = {};
+module.exports = {
+    custom: async (ctx) => {
+        const { models } = strapi
+        // console.log({ ctx, models: models.form.attributes });
+        return { hello: 'world' }
+    }
+};

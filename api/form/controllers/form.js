@@ -7,7 +7,6 @@
 
 module.exports = {
     contentType: async (ctx) => {
-        console.log({ ctx });
         return { id: 'tes' }
     }
 };

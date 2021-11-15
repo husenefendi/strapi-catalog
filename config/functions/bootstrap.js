@@ -106,7 +106,7 @@ const createSeedData = async (files) => {
         });
       }
     } catch (e) {
-      console.log(e);
+      // console.log(e);
     }
 
   });
